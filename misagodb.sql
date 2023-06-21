@@ -22,7 +22,7 @@ CREATE TABLE posts (
     user_id INT(11) NOT NULL,
     title VARCHAR(255) NOT NULL,
     content TEXT NOT NULL,
-    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (id),
     FOREIGN KEY (category_id) REFERENCES categories(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
