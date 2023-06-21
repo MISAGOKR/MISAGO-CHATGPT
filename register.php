@@ -9,6 +9,14 @@
     <div class="container">
         <h1>회원가입</h1>
         <form method="POST" action="register.php">
+             <div class="form-group">
+                <label for="id">아이디</label>
+                <input type=id" class="form-control" id="id" name="id" required>
+            </div>
+              <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>                                                         
             <div class="form-group">
                 <label for="email">이메일</label>
                 <input type="email" class="form-control" id="email" name="email" required>
