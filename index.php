@@ -20,7 +20,7 @@
             $password = $_POST['password'];
 
             // 사용자 인증을 위한 DB 조회 및 비밀번호 검증
-            $authenticated = authenticateUser($username, $password);
+            $authenticated = authenticateUser($id, $password);
 
             if ($authenticated) {
                 $_SESSION['id'] = $id;
