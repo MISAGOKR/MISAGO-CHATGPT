@@ -58,3 +58,15 @@ CREATE TABLE files (
     PRIMARY KEY (id),
     FOREIGN KEY (post_id) REFERENCES posts(id)
 );
+CREATE TABLE videos (
+    id INT(11) NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    filename VARCHAR(255) NOT NULL,
+    filepath VARCHAR(255) NOT NULL,
+    uploaded_by INT(11) NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id),
+    FOREIGN KEY (uploaded_by) REFERENCES users(id)
+);
+
