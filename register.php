@@ -18,12 +18,16 @@
                 <input type="email" class="form-control" id="email" name="email" required>
             </div>                                                         
             <div class="form-group">
-                <label for="email">이메일</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <label for="name">이름</label>
+                <input type="name" class="form-control" id="name" name="name" required>
             </div>
             <div class="form-group">
                 <label for="password">비밀번호</label>
                 <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+             <div class="form-group">
+                <label for="phone">전화번호/휴대폰번호</label>
+                <input type="phone" class="form-control" id="phone" name="phone" required>
             </div>
             <button type="submit" class="btn btn-primary">가입하기</button>
         </form>
