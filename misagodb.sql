@@ -50,14 +50,6 @@ CREATE TABLE chats (
     FOREIGN KEY (receiver_id) REFERENCES users(id)
 );
 
-CREATE TABLE files (
-    id INT(11) NOT NULL AUTO_INCREMENT,
-    post_id INT(11) NOT NULL,
-    filename VARCHAR(255) NOT NULL,
-    filepath VARCHAR(255) NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (post_id) REFERENCES posts(id)
-);
 CREATE TABLE videos (
     id INT(11) NOT NULL AUTO_INCREMENT,
     title VARCHAR(255) NOT NULL,
