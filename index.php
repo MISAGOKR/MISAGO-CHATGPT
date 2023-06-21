@@ -16,18 +16,18 @@
 
         // 로그인 기능
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $username = $_POST['username'];
+            $id = $_POST['id'];
             $password = $_POST['password'];
 
             // 사용자 인증을 위한 DB 조회 및 비밀번호 검증
             $authenticated = authenticateUser($username, $password);
 
             if ($authenticated) {
-                $_SESSION['username'] = $username;
+                $_SESSION['id'] = $id;
 
                 // 자동 로그인 기능
                 if (isset($_POST['remember'])) {
-                    setcookie('username', $username, time() + (86400 * 30), '/'); // 쿠키 유효 기간: 30일
+                    setcookie('id', $id, time() + (86400 * 30), '/'); // 쿠키 유효 기간: 30일
                 }
 
                 header('Location: welcome.php');
@@ -38,7 +38,7 @@
         }
 
         // 로그인 인증 기능
-        if (isset($_SESSION['username'])) {
+        if (isset($_SESSION['id'])) {
             // 로그인 상태인 경우
             header('Location: welcome.php');
             exit();
@@ -47,11 +47,11 @@
 
         <form method="POST">
             <div class="form-group">
-                <label for="username">사용자명:</label>
-                <input type="text" class="form-control" id="username" name="username" required>
+                <label for="id">아이디</label>
+                <input type="text" class="form-control" id="id" name="id" required>
             </div>
             <div class="form-group">
-                <label for="password">비밀번호:</label>
+                <label for="password">비밀번호</label>
                 <input type="password" class="form-control" id="password" name="password" required>
             </div>
             <div class="form-check">
