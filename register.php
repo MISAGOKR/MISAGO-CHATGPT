@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $verificationCode = mt_rand(100000, 999999);
     
     // 회원 정보 데이터베이스에 저장
-    $sql = "INSERT INTO users (email, password, verification_code) VALUES ('$email', '$password', '$verificationCode')";
+    $sql = "INSERT INTO users (id, email, name, password, phone, email_verification) VALUES ('$id', '$name', '$email', '$password', '$phone', '$email_verification')";
     if (mysqli_query($conn, $sql)) {
         // 이메일로 인증 코드 전송 (SMTP 설정 필요)
         // ...
