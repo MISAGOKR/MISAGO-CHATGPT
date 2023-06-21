@@ -70,6 +70,43 @@
 
         <!-- 회원 관리 -->
         <h2>회원 관리</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>아이디</th>
+                    <th>이름</th>
+                    <th>이메일</th>
+                    <th>관리</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // MySQL 연결 설정
+                $host = 'localhost';
+                $user = 'username';
+                $password = 'password';
+                $database = 'database';
+
+                $conn = mysqli_connect($host, $user, $password, $database);
+
+                // 회원 목록 조회
+                $query = "SELECT * FROM members";
+                $result = mysqli_query($conn, $query);
+
+                // 회원 목록 출력
+                while ($row = mysqli_fetch_assoc($result)) {
+                    echo '<tr>';
+                    echo '<td>' . $row['id'] . '</td>';
+                    echo '<td>' . $row['username'] . '</td>';
+                    echo '<td>' . $row['password'] . '</td>';
+                    echo '</tr>';
+                }
+
+                // MySQL 연결 종료
+                mysqli_close($conn);
+                ?>
+            </tbody>
+        </table>
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <input type="text" name="member_id" placeholder="회원 ID">
             <input type="submit" name="delete_member" value="회원 삭제">
